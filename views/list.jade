@@ -1,0 +1,29 @@
+include ./layout
+
+block content
+	div.container
+		div.rows
+			div.col-lg-12
+				form.form-inline
+				table.table.table-bordered.table-hover
+					tr
+						th name
+						th age
+						th sex
+						th telephone
+						th postNumber
+						th address
+					tbody#infoContainer
+						each item in result
+							tr
+								td #{item.name}
+								td #{item.age}
+								td #{item.sex}
+								td #{item.telephone}
+								td #{item.postNum}
+								td #{item.address}
+					tfoot
+							tr
+								td(colspan="4")
+									a.btn.btn-primary#add(href="/users/addUserMiddle") Add
+	script(src="/javascripts/list.js")
