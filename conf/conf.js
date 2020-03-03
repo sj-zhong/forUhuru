@@ -1,9 +1,8 @@
 ﻿module.exports = {
     mysql: {
-        host: 'localhost', 
-        user: 'root',
-        password: 'aaaaaa',
-        database:'mydb', // 前面建的user表位于这个数据库中
-        port: 3306
-    }
+        host: 'us-cdbr-iron-east-04.cleardb.net', 
+        user: 'bf265313f175c4',
+        password: '832682b3',
+        database:'/heroku_1fce15628916a32' 
+            }
 };
