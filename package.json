@@ -15,13 +15,14 @@
     "mysql": "^2.18.1",
     "node-inspect": "^1.11.6"
   },
-   "engines": {
-    "node": "12.16.1"
-  },
   "main": "app.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
   },
   "repository": {
     "type": "git",
