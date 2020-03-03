@@ -25,7 +25,7 @@ module.exports = {
 
             // データベースに該当記録を挿入する
             connection.query($sql.insert, [param.name, param.age, param.sex, param.telephone, param.postNum, param.address], function(err, result) {
-                console.log('add data result:" result);
+                console.log("add data result: "+result);
                 if(result) {
                     result = {
                         code: 200,
