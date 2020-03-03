@@ -6,6 +6,15 @@ var userDao = require('../dao/userDao');
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+// create sheet
+router.get('/create', function(req, res, next) {
+    userDao.create(req, res, next);
+});
+
+// drop sheet  Attention please!！！！
+router.get('/drop', function(req, res, next) {
+    userDao.drop(req, res, next);
+});
 // add user
 router.get('/addUser', function(req, res, next) {
     userDao.add(req, res, next);

@@ -10,7 +10,7 @@ var jsonWrite = function (res, ret) {
     if(typeof ret === 'undefined') {
         res.json({
             code:'1',
-            msg: 'opretion falt'
+            msg: 'opretion fail'
         });
     } else {
         res.json(ret);
@@ -22,7 +22,8 @@ module.exports = {
         pool.getConnection(function(err, connection) {
             // clientデータ取得
             var param = req.query || req.params;
-
+			console.log(param);
+			
             // データベースに該当記録を挿入する
             connection.query($sql.insert, [param.name, param.age, param.sex, param.telephone, param.postNum, param.address], function(err, result) {
                 console.log("add data result: "+result);
@@ -39,7 +40,24 @@ module.exports = {
             });
         });
     },
-
+    create: function (req, res, next) {
+        pool.getConnection(function(err, connection) {
+	        connection.query("CREATE TABLE user(name  varchar(255),age int, sex varchar(255),telephone decimal(20),postNum decimal(20), address varchar(255))", function(err,result){
+				if(err){throw err}else{
+					console.log("创建表成功")
+				}
+			});
+        });
+    },
+    drop: function (req, res, next) {
+        pool.getConnection(function(err, connection) {
+	        connection.query("DROP TABLE IF EXISTS  user", function(err,result){
+				if(err){throw err}else{
+					console.log("delete sucessed")
+				}
+			});
+        });
+    },    
     queryAll: function (req, res, next) {
         pool.getConnection(function(err, connection) {
             connection.query($sql.queryAll, function(err, result) {
