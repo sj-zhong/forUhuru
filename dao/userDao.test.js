@@ -9,7 +9,9 @@ test('test add', (done) => {
     postNum:321,
     address:"bb"
   };
-  expect(add(reques,0,0)).toEqual({code:200,message: }
-  );
+  add((reques,res,0) => {
+        expect(res).toEqual({ code:200,message: 
+        });
+  });
   done();
 })
