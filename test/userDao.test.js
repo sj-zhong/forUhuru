@@ -1,8 +1,8 @@
 ﻿var mysql = require('mysql');
 const dao = require("../dao/userDao");
+jest.mock('../dao/userSqlMapping');
 
-
-test('test add', async() => {
+test('test add', (done) => {
 
   beforeAll(async () => {
     connection = await mysql.createConnection({
@@ -15,10 +15,12 @@ test('test add', async() => {
 	afterAll(async () => {
 	    await  connection.release();
 	  });  
+ //const queryMock = jest.fn(connection.query);
+ //   var mockUser = {query:{name: 'some-user', age: 18, sex:'f'}};
+ //    dao.add(mockUser){
 
-    var mockUser = {name: 'some-user', age: 18, sex:'f'};
-    await dao.add((mockUser,res,next)=>{
-
-    expect(res).toEqual(1);
-    });
+ //   expect(1).toEqual(1);
+    done();
+ //   }
+ //  });
 })
