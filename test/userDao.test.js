@@ -1,5 +1,5 @@
 ﻿var mysql = require('mysql');
-const dao = require("./userDao");
+const dao = require("../dao/userDao");
 
 
 test('test add', async() => {
