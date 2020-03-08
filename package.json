@@ -12,6 +12,10 @@
     "mysql": "^2.18.1",
     "node-inspect": "^1.11.6"
   },
+  
+  "scripts":{
+    "test":"jest"
+  },
   "devDependencies": {
     "jest": "^25.1.0"
   }
