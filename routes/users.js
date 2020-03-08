@@ -19,7 +19,7 @@ router.get('/drop', function(req, res, next) {
 router.get('/addUser', function(req, res, next) {
     userDao.add(req, res, next);
 });
-router.get('/addUserMiddle', function(req, res, next) {
+router.get('/addUserE', function(req, res, next) {
     res.render('addUser',{
         title:'Add user'
     });
