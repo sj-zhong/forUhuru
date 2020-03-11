@@ -12,10 +12,14 @@
 			type:'GET',
 			url:'/users/addUser?name='+name+'&age='+age +'&sex='+sex+'&telephone='+telephone+'&postNum='+postNum+'&address='+address,
 			dataType:'JSON',
-			success:function(data){
-				if(data['code'] === 200){
+			success:function(data) {
+				if (data['code'] === 200) {
 					location.href = '/users/queryAll';
+				} else
+				{
+					alert(data['msg'])
 				}
+
 			}
 		});
 	})
